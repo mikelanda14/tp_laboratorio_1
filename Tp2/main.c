@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ArrayEmployees.h"
-#define LEN 6
+#define LEN 1000
 
 int main()
 {
