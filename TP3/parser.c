@@ -25,21 +25,16 @@ char var[4][62];
 
             Employee* newEmployee = employee_new();
 if(newEmployee!=NULL){
-            ll_add(pArrayListEmployee,newEmployee);
+
             newEmployee=employee_newParametros(var[0],var[1],var[2],var[3]);
-
+             ll_add(pArrayListEmployee,newEmployee);
 }
-
-   /* if(newEmployee!=NULL){
-          newEmployee->id=atoi(var[0]);
-          strcpy(newEmployee->nombre,var[1]);
-          newEmployee->horasTrabajadas=atoi(var[2]);
-          newEmployee->sueldo=atoi(var[3]);
-    }*/
-    }
+}
    else{
     break;
-        }}
+        }
+
+        }
     while(!feof(pFile));
 
     return 1;
@@ -54,6 +49,15 @@ if(newEmployee!=NULL){
  */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
+    Employee* employeeReadB;
+int r;
+while(!feof(pFile)){
+    employeeReadB=employee_new();
+r=fread(employeeReadB,sizeof(Employee),1,pFile);
+if(r==1){
 
+    ll_add(pArrayListEmployee,employeeReadB);
+}
+}
     return 1;
 }

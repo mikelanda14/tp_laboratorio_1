@@ -4,63 +4,122 @@
 #include <ctype.h>
 
 
-char getChar(char mensaje[]){
-    char valor;
-    printf("%s",mensaje);
+/**
+* \brief Solicita un número al usuario y lo valida
+* \param input Se carga el numero ingresado
+* \param message Es el mensaje a ser mostrado
+* \param eMessage Es el mensaje a ser mostrado en caso de error
+* \param lowLimit Limite inferior a validar
+* \param hiLimit Limite superior a validar
+* \return Si obtuvo el numero [0] si no [-1]
+*
+*/
+int getInt(int* input,char message[],char eMessage[], int lowLimit, int hiLimit)
+{
+    int valor,re=-1;
+    printf(message);
+    fflush(stdin);
+    scanf("%d",&valor);
+    while(valor<lowLimit||valor>hiLimit){
+        printf(eMessage);
+        fflush(stdin);
+        scanf("%d",&valor);
+
+    }
+    re=0;
+
+    *input = valor;
+    return re;
+}
+
+/**
+* \brief Solicita un número al usuario y lo valida
+* \param input Se carga el numero ingresado
+* \param message Es el mensaje a ser mostrado
+* \param eMessage Es el mensaje a ser mostrado en caso de error
+* \param lowLimit Limite inferior a validar
+* \param hiLimit Limite superior a validar
+* \return Si obtuvo el numero [0] si no [-1]
+*
+*/
+int getFloat(float* input,char message[],char eMessage[], float lowLimit, float hiLimit)
+{
+        int re=-1;
+        float valor;
+    printf(message);
+    fflush(stdin);
+    scanf("%f",&valor);
+    while(valor<lowLimit||valor>hiLimit){
+        printf(eMessage);
+        fflush(stdin);
+        scanf("%f",&valor);
+
+    }
+    re=0;
+    *input = valor;
+
+
+    return re;
+}
+
+
+/**
+* \brief Solicita un caracter al usuario y lo valida
+* \param input Se carga el caracter ingresado
+* \param message Es el mensaje a ser mostrado
+* \param eMessage Es el mensaje a ser mostrado en caso de error
+* \param lowLimit Limite inferior a validar
+* \param hiLimit Limite superior a validar
+* \return Si obtuvo el caracter [0] si no [-1]
+*
+*/
+int getChar(char* input,char message[],char eMessage[], char lowLimit, char hiLimit)
+{
+        char valor;
+        int re=-1;
+    printf(message);
     fflush(stdin);
     scanf("%c",&valor);
-
-return valor;
+    while(valor<lowLimit||valor>hiLimit){
+        printf(eMessage);
+        fflush(stdin);
+        scanf("%c",&valor);
+    }
+    re=0;
+    *input = valor;
+    return re;
 }
-int getInt(char mensaje[]){
-int valor;
 
-printf("%s",mensaje);
-fflush(stdin);
-scanf("%d",&valor);
 
-return valor;
-}
-float getFloat(char mensaje[]){
-float valor;
-
-printf("%s",mensaje);
-fflush(stdin);
-scanf("%f",&valor);
-
-return valor;
-}
-void miFgets(char nombre[], int cantidad,char mensaje[]){
-    printf("%s",mensaje);
+/**
+* \brief Solicita una cadena de caracteres al usuario y la valida
+* \param input Se carga el string ingresado
+* \param message Es el mensaje a ser mostrado
+* \param eMessage Es el mensaje a ser mostrado en caso de error
+* \param lowLimit Longitud mínima de la cadena
+* \param hiLimit Longitud máxima de la cadena
+* \return Si obtuvo la cadena [0] si no [-1]
+*
+*/
+int getString(char* input,char message[],char eMessage[], int lowLimit, int hiLimit)
+{
+    char cadena[hiLimit];
+    int re=-1;
+    printf(message);
     fflush(stdin);
-    fgets(nombre, cantidad-2, stdin);
-nombre=strtok(nombre,"\n");
-    nombre[cantidad-1] = '\0';
-}
-int valAnio(int anio){
-    while(anio<1930 || anio>2050 ){
-        anio=getInt("el anio esta fuera de rango  ");
-    }return anio;
+    fgets(cadena, hiLimit-2, stdin);
+    strcpy(cadena,strtok(cadena,"\n"));
+    cadena[hiLimit-1] = '\0';
+    while(strlen(cadena)<2){
+        printf(eMessage);
+        printf(message);
+    fflush(stdin);
+    fgets(cadena, hiLimit-2, stdin);
+    strcpy(cadena,strtok(cadena,"\n"));
+    cadena[hiLimit-1] = '\0';
     }
-int valMes(int mes){
-    while(mes<1 || mes>12 ){
-        mes=getInt("el Mes esta fuera de rango  ");
-    }return mes;
-    }
-int valDia(int dia){
-    while(dia<1 || dia>30 ){
-        dia=getInt("el Dia esta fuera de rango  ");
-    }return dia;
-    }
-float valSalary(float sala){
-    while(sala<1){
-        sala=getFloat("Salario deve ser mayor que 0\'cero\' :");
-    }return sala;
-    }
-char valSexo(char sexo){
-    while(sexo!='f'&& sexo!='F'&& sexo!='m'&& sexo!='M'){
-        sexo=getChar("solo \'f\'o\'m\'");
-    }sexo=toupper(sexo);
-    return sexo;
-    }
+   re=0;
 
+    strcpy(input,cadena);
+    return re;
+}

@@ -121,7 +121,7 @@
 
 1572910994 c:\users\alumno\desktop\win_64\controller.h
 
-1573267611 source:c:\c#\tp3\main.c
+1573956040 source:c:\c#\tp3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -130,24 +130,26 @@
 
 1572910994 c:\c#\tp3\linkedlist.h
 
-1572910994 c:\c#\tp3\controller.h
+1573954029 c:\c#\tp3\controller.h
 
-1573266290 c:\c#\tp3\employee.h
+1573945901 c:\c#\tp3\employee.h
 
-1572910994 source:c:\c#\tp3\utn.c
+1573879561 source:c:\c#\tp3\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 
-1573267611 source:c:\c#\tp3\controller.c
+1573956757 source:c:\c#\tp3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"utn.h"
 	"LinkedList.h"
 	"Employee.h"
+	"parser.h"
 
-1573266292 source:c:\c#\tp3\employee.c
+1573949683 source:c:\c#\tp3\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -155,10 +157,14 @@
 	"Controller.h"
 	"Employee.h"
 
-1573266139 source:c:\c#\tp3\parser.c
+1573861421 source:c:\c#\tp3\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 	<string.h>
+
+1460746094 c:\c#\tp3\utn.h
+
+1572910994 c:\c#\tp3\parser.h
 
