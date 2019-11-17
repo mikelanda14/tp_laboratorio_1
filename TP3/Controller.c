@@ -271,8 +271,8 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
     system("cls");
 
     printf("\n1)Ordenar por nombre de A a Z\n2)Ordenar por nombre de Z a A");
-    printf("\n3)Ordenar por Horas trabajadas de menor a mayor\n4)Ordenar por Horas trabajadas de mayor a menor");
-    printf("\n5)Ordenar por Sueldos de menor a mayor\n6)Ordenar por Sueldos de mayor a menor\n7)Salir");
+    printf("\n3)Ordenar por Sueldos de menor a mayor\n4)Ordenar por Sueldos de mayor a menor");
+    printf("\n5)Ordenar por Horas trabajadas de menor a mayor\n6)Ordenar por Horas trabajadas de mayor a menor\n7)Salir");
     getInt(&opcion,"\nDigite la Opcion deseada: ","\nNo es una opcion valida",1,7);
     switch(opcion){
     case 1:
